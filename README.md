@@ -1,6 +1,6 @@
 # nextjs-playground
 
-React, Next.jsなどの技術を使った練習場
+React, Next.js などの技術を使った練習場
 
 ## NextJS Typescript Boilerplate
 
