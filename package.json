@@ -1,6 +1,4 @@
 {
-  "name": "with-typescript-eslint-jest",
-  "author": "@erikdstock",
   "license": "MIT",
   "version": "1.0.0",
   "scripts": {
@@ -24,6 +22,9 @@
       "yarn lint",
       "yarn format"
     ]
+  },
+  "engines": {
+    "npm": "npmではなくyarnを使ってください"
   },
   "dependencies": {
     "next": "latest",
