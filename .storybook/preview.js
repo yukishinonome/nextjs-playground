@@ -3,7 +3,7 @@
 import * as nextImage from 'next/image'
 
 export const parameters = {
-  layout: 'fullscreen',
+  layout: 'padded',
   actions: { argTypesRegex: '^on[A-Z].*' },
   viewport: {
     viewports: {
