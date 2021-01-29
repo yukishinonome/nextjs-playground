@@ -19,14 +19,11 @@ const reorder = (
   return result
 }
 
-const ListContentContainer = (): JSX.Element => {
-  const initial: ItemType[] = [...Array(10)].map((_, idx) => {
-    return {
-      id: `id-${idx}`,
-      content: `Item ${idx}`
-    }
-  })
-
+const ListContentContainer = ({
+  initial
+}: {
+  initial: ItemType[]
+}): JSX.Element => {
   const [items, setItems] = useState(initial)
 
   const onDragEnd: OnDragEndResponder = (result) => {
