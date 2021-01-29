@@ -3,9 +3,8 @@ const path = require('path')
 module.exports = {
   stories: [
     '../stories/**/*.stories.mdx',
-    '../stories/**/*.stories.@(js|jsx|ts|tsx)'
-    // TODO: コンポーネント作成したらコメントアウトを外す
-    // '../components/**/**/*.stories.@(js|jsx|ts|tsx)'
+    '../stories/**/*.stories.@(js|jsx|ts|tsx)',
+    '../components/**/**/*.stories.@(js|jsx|ts|tsx)'
   ],
   addons: [
     '@storybook/addon-links',
