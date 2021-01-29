@@ -1,5 +1,4 @@
-// TODO: global.scss作成したら外す
-// import '../styles/global.scss'
+import '../styles/global.scss'
 import * as nextImage from 'next/image'
 
 export const parameters = {
