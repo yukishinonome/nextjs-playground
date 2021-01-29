@@ -1,7 +1,10 @@
-import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import {
+  DragDropContext,
+  Droppable,
+  OnDragEndResponder
+} from 'react-beautiful-dnd'
 import ItemList from '../ItemList'
 import { ItemType } from './index'
-import { OnDragEndResponder } from 'react-beautiful-dnd'
 
 const ListContent = ({
   onDragEnd,

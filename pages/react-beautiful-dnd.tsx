@@ -1,28 +1,20 @@
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
+import { resetServerContext } from 'react-beautiful-dnd'
 import PageTitle from '../components/atoms/PageTitle'
 import BackToHomeButton from '../components/atoms/BackToHomeButton'
 import ListContent from '../components/organisms/ListContent'
-import { ItemType } from '../components/organisms/ListContent'
-import { resetServerContext } from 'react-beautiful-dnd'
 
-export const getStaticProps: GetStaticProps = async () => {
-  const initial: ItemType[] = [...Array(10)].map((_, idx) => {
-    return {
-      id: `id-${idx}`,
-      content: `Item ${idx}`
-    }
-  })
-
+export const getServerSideProps: GetServerSideProps = async () => {
   resetServerContext()
 
-  return { props: { initial } }
+  return { props: {} }
 }
 
-const DnD = ({ initial }: { initial: ItemType[] }): JSX.Element => {
+const DnD = (): JSX.Element => {
   return (
     <>
       <PageTitle pageName={'react-beautiful-dnd'} />
-      <ListContent initial={initial} />
+      <ListContent />
       <BackToHomeButton />
     </>
   )

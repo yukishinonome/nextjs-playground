@@ -12,7 +12,7 @@ const Home = (): JSX.Element => {
       </Head>
       <PageTitle pageName={'ページ一覧'} />
       {pageList.map((page, index) => (
-        <Link href={page} key={index}>
+        <Link href={'/' + page} key={index}>
           <a>{page}</a>
         </Link>
       ))}
