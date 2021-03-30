@@ -1,8 +1,13 @@
 # nextjs-playground
 
-React, Next.js などの技術を使った練習場
+Next.js を使った練習場
 
 ## NextJS Typescript Boilerplate
+
+https://github.com/vercel/next.js/tree/master/examples/with-typescript-eslint-jest
+
+Copyright (c) 2021 Vercel, Inc.  
+https://github.com/vercel/next.js/blob/canary/license.md
 
 Bootstrap a developer-friendly NextJS app configured with:
 
