@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 import PageTitle from '../components/atoms/PageTitle'
 
 const Home = (): JSX.Element => {
-  const pageList = ['react-beautiful-dnd']
+  const pageList = ['react-beautiful-dnd', 'pagination']
   return (
     <Layout>
       <Head>
