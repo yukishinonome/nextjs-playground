@@ -3,7 +3,7 @@ import ListContent, { ItemType } from '.'
 import { Story, Meta } from '@storybook/react/types-6-0'
 
 export default {
-  title: 'ListContent',
+  title: 'Organisms/ListContent',
   component: ListContent
 } as Meta
 
