@@ -3,7 +3,7 @@ import BackToHomeButton from '.'
 import { Story, Meta } from '@storybook/react/types-6-0'
 
 export default {
-  title: 'BackToHomeButton',
+  title: 'Atoms/BackToHomeButton',
   component: BackToHomeButton
 } as Meta
 

@@ -1,0 +1,34 @@
+.pagination {
+  display: flex;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0 4px;
+
+    a {
+      font-size: 1.2rem;
+      padding: 6px;
+      color: royalblue;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    &.active {
+      a {
+        pointer-events: none;
+        color: black;
+      }
+    }
+  }
+
+  .disabled {
+    display: none;
+  }
+
+  .breakLink {
+    pointer-events: none;
+    color: black;
+  }
+}

@@ -3,7 +3,7 @@ import PageTitle from '.'
 import { Story, Meta } from '@storybook/react/types-6-0'
 
 export default {
-  title: 'PageTitle',
+  title: 'Atoms/PageTitle',
   component: PageTitle
 } as Meta
 
