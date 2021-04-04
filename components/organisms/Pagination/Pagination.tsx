@@ -40,7 +40,7 @@ const Pagination: FC<Props> = ({ pageItems }) => {
         onPageChange={handlePageChange}
         containerClassName={styles.pagination}
         activeClassName={styles.active}
-        disabledClassName={styles.pagination__disabled}
+        disabledClassName={styles.disabled}
         breakLinkClassName={styles.breakLink}
       />
     </>
