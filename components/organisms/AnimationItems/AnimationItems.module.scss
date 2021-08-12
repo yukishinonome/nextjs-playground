@@ -1,0 +1,11 @@
+.box-a {
+  width: 20px;
+  height: 50px;
+  background: red;
+  transition: all 700ms 0s ease;
+}
+
+.box-a:hover {
+  background: greenyellow;
+  width: 300px;
+}
