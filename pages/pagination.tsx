@@ -1,7 +1,6 @@
 import { FC } from 'react'
-import PageTitle from '../components/atoms/PageTitle'
+import Layout from '../components/Layout'
 import Pagination from '../components/organisms/Pagination'
-import BackToHomeButton from '../components/atoms/BackToHomeButton'
 
 const PaginationPage: FC = () => {
   const pageItems = [...Array(102)].map((_, idx) => {
@@ -9,11 +8,9 @@ const PaginationPage: FC = () => {
   })
 
   return (
-    <>
-      <PageTitle pageName={'react-paginate'} />
+    <Layout pageName="react-paginate">
       <Pagination pageItems={pageItems} />
-      <BackToHomeButton />
-    </>
+    </Layout>
   )
 }
 

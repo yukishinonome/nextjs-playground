@@ -1,7 +1,6 @@
 import { GetServerSideProps } from 'next'
 import { resetServerContext } from 'react-beautiful-dnd'
-import PageTitle from '../components/atoms/PageTitle'
-import BackToHomeButton from '../components/atoms/BackToHomeButton'
+import Layout from '../components/Layout'
 import ListContent from '../components/organisms/ListContent'
 import { ItemType } from '../components/organisms/ListContent'
 
@@ -20,11 +19,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 const DnD = ({ initial }: { initial: ItemType[] }): JSX.Element => {
   return (
-    <>
-      <PageTitle pageName={'react-beautiful-dnd'} />
+    <Layout pageName="react-beautiful-dnd">
       <ListContent initial={initial} />
-      <BackToHomeButton />
-    </>
+    </Layout>
   )
 }
 
