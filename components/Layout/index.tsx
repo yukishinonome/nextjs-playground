@@ -10,9 +10,13 @@ type Props = {
 const Layout: FC<Props> = ({ children, pageName }) => {
   return (
     <>
-      <PageTitle pageName={pageName} />
-      <div className={styles.container}>{children}</div>
-      <BackToHomeButton />
+      <header className={styles['title']}>
+        <PageTitle pageName={pageName} />
+      </header>
+      <main>{children}</main>
+      <footer className={styles['back-to-home-button']}>
+        <BackToHomeButton />
+      </footer>
     </>
   )
 }

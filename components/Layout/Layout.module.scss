@@ -1,4 +1,11 @@
 .container {
-  display: flex;
-  flex-direction: column;
+  padding: 20px 0;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.back-to-home-button {
+  margin-top: 20px;
 }
