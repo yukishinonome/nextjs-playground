@@ -1,0 +1,42 @@
+.button {
+  margin: 10px 0;
+}
+
+%animation-a {
+  height: 50px;
+  transition: all 700ms 0s ease;
+}
+
+.animation-a-red {
+  @extend %animation-a;
+  width: 20px;
+  background: red;
+}
+
+.animation-a-green {
+  @extend %animation-a;
+  width: 300px;
+  background: greenyellow;
+}
+
+.animation-b {
+  width: 100px;
+  height: 100px;
+  background: greenyellow;
+}
+
+.animation-b-running {
+  animation: rotation 2s ease 0s 1 alternate none running;
+}
+
+@keyframes rotation {
+  50% {
+    transform: scale(0.4) rotate(-180deg);
+    background: red;
+  }
+
+  100% {
+    transform: scale(1) rotate(180deg);
+    background: greenyellow;
+  }
+}

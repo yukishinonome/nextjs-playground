@@ -1,22 +1,24 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Layout from '../components/Layout'
 import PageTitle from '../components/atoms/PageTitle'
 
 const Home = (): JSX.Element => {
-  const pageList = ['react-beautiful-dnd', 'pagination']
+  const pageList = ['animation', 'react-beautiful-dnd', 'pagination']
+
   return (
-    <Layout>
+    <>
       <Head>
         <title>Next.js Playground</title>
       </Head>
       <PageTitle pageName={'ページ一覧'} />
-      {pageList.map((page, index) => (
-        <Link href={'/' + page} key={index}>
-          <a>{page}</a>
-        </Link>
-      ))}
-    </Layout>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        {pageList.map((page, index) => (
+          <Link href={'/' + page} key={index}>
+            <a>{page}</a>
+          </Link>
+        ))}
+      </div>
+    </>
   )
 }
 
