@@ -1,10 +1,20 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import styles from './AnimationItems.module.scss'
 
 const AnimationItems: FC = () => {
+  const [isBoxAFlag, setBoxAFlag] = useState(true)
   return (
     <>
-      <div className={styles['box-a']} data-testid="stretch"></div>
+      <div
+        className={isBoxAFlag ? styles['box-a-red'] : styles['box-a-green']}
+        data-testid="stretch"
+      ></div>
+      <button
+        className={styles['button']}
+        onClick={() => setBoxAFlag(!isBoxAFlag)}
+      >
+        Click
+      </button>
     </>
   )
 }

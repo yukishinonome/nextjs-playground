@@ -1,11 +1,20 @@
-.box-a {
-  width: 20px;
+.button {
+  margin: 10px 0;
+}
+
+%box-a {
   height: 50px;
-  background: red;
   transition: all 700ms 0s ease;
 }
 
-.box-a:hover {
-  background: greenyellow;
+.box-a-red {
+  @extend %box-a;
+  width: 20px;
+  background: red;
+}
+
+.box-a-green {
+  @extend %box-a;
   width: 300px;
+  background: greenyellow;
 }
