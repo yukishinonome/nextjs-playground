@@ -2,19 +2,19 @@
   margin: 10px 0;
 }
 
-%box-a {
+%animation-a {
   height: 50px;
   transition: all 700ms 0s ease;
 }
 
-.box-a-red {
-  @extend %box-a;
+.animation-a-red {
+  @extend %animation-a;
   width: 20px;
   background: red;
 }
 
-.box-a-green {
-  @extend %box-a;
+.animation-a-green {
+  @extend %animation-a;
   width: 300px;
   background: greenyellow;
 }

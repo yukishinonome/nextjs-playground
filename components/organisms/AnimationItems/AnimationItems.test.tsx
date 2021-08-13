@@ -2,9 +2,9 @@ import { render } from '../../../test/testUtils'
 import AnimationItems from './AnimationItems'
 
 describe('AnimationsItems', () => {
-  it('"box"というクラスがある', () => {
+  it('"animation-a-red"というクラスがある', () => {
     const { getByTestId } = render(<AnimationItems />, {})
 
-    expect(getByTestId('stretch')).toHaveClass('box-a')
+    expect(getByTestId('stretch')).toHaveClass('animation-a-red')
   })
 })
