@@ -4,17 +4,19 @@ import styles from './AnimationItems.module.scss'
 const AnimationItems: FC = () => {
   const [isAnimationA, setAnimationA] = useState(false)
   const [isAnimationB, setAnimationB] = useState(false)
+  const [isAnimationC, setAnimationC] = useState(false)
 
   useEffect(() => {
-    const element = document.getElementById('animation-b')
-    const handler = () => {
+    const elementB = document.getElementById('animation-b')
+
+    const handlerB = () => {
       setAnimationB(false)
     }
 
-    element.addEventListener('animationend', handler)
+    elementB.addEventListener('animationend', handlerB)
 
     return () => {
-      element.removeEventListener('animationend', handler)
+      elementB.removeEventListener('animationend', handlerB)
     }
   }, [])
 
@@ -46,6 +48,35 @@ const AnimationItems: FC = () => {
         <button
           className={styles['button']}
           onClick={() => setAnimationB(true)}
+        >
+          Click
+        </button>
+      </section>
+      <section>
+        <div
+          id="animation-c"
+          className={`${styles['animation-c']} ${
+            isAnimationC ? styles['-visible'] : ''
+          }`}
+        >
+          <span>T</span>
+          <span>E</span>
+          <span>X</span>
+          <span>T</span>
+          <span>&nbsp;</span>
+          <span>A</span>
+          <span>N</span>
+          <span>I</span>
+          <span>M</span>
+          <span>A</span>
+          <span>T</span>
+          <span>I</span>
+          <span>O</span>
+          <span>N</span>
+        </div>
+        <button
+          className={styles['button']}
+          onClick={() => setAnimationC(!isAnimationC)}
         >
           Click
         </button>
