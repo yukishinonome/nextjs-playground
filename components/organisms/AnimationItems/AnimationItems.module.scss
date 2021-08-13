@@ -40,3 +40,24 @@
     background: greenyellow;
   }
 }
+
+.animation-c {
+  display: flex;
+  overflow: hidden;
+  font-size: 2rem;
+
+  &.-visible span {
+    transform: translate(0, 0);
+  }
+
+  span {
+    transform: translate(0, 105%);
+    transition: transform ease 0.5s;
+
+    @for $i from 1 to 14 {
+      &:nth-child(#{$i + 1}) {
+        transition-delay: $i * 0.06s;
+      }
+    }
+  }
+}
