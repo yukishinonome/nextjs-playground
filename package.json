@@ -27,7 +27,7 @@
     "npm": "npmではなくyarnを使ってください"
   },
   "dependencies": {
-    "next": "11.0.1",
+    "next": "12.0.7",
     "react": "^17.0.2",
     "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^17.0.2",
