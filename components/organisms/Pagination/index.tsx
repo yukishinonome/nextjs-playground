@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { VFC } from 'react'
 import Pagination, { Props } from './Pagination'
 
-const PaginationContainer: FC<Props> = ({ pageItems }): JSX.Element => (
+const PaginationContainer: VFC<Props> = ({ pageItems }): JSX.Element => (
   <>
     <Pagination pageItems={pageItems} />
   </>

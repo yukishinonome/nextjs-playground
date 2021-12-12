@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { VFC, useState } from 'react'
 import ReactPaginate from 'react-paginate'
 import styles from './Pagination.module.scss'
 
@@ -6,7 +6,7 @@ export type Props = {
   pageItems: string[]
 }
 
-const Pagination: FC<Props> = ({ pageItems }) => {
+const Pagination: VFC<Props> = ({ pageItems }) => {
   const [offset, setOffset] = useState(0)
   const perPage = 4
 
