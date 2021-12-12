@@ -1,13 +1,14 @@
-import { FC } from 'react'
+import { VFC } from 'react'
 import styles from './layout.module.scss'
 import PageTitle from '../atoms/PageTitle'
 import BackToHomeButton from '../atoms/BackToHomeButton'
 
 type Props = {
   pageName: string
+  children: React.ReactNode
 }
 
-const Layout: FC<Props> = ({ children, pageName }) => {
+const Layout: VFC<Props> = ({ children, pageName }) => {
   return (
     <>
       <header className={styles['title']}>
