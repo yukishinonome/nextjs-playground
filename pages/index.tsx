@@ -3,7 +3,12 @@ import Link from 'next/link'
 import PageTitle from '../components/atoms/PageTitle'
 
 const Home = (): JSX.Element => {
-  const pageList = ['animation', 'react-beautiful-dnd', 'pagination']
+  const pageList = [
+    'animation',
+    'react-beautiful-dnd',
+    'pagination',
+    'mui/button'
+  ]
 
   return (
     <>
