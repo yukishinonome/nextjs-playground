@@ -1,11 +1,10 @@
-import React from 'react'
-import ListContent, { ItemType } from '.'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
+import ListContent from './ListContent'
 
 export default {
   title: 'Organisms/ListContent',
   component: ListContent
-} as Meta
+} as ComponentMeta<typeof ListContent>
 
 const initial = [...Array(10)].map((_, idx) => {
   return {
@@ -14,11 +13,6 @@ const initial = [...Array(10)].map((_, idx) => {
   }
 })
 
-const Template: Story<{ initial: ItemType[] }> = (args) => (
-  <ListContent {...args} />
-)
-
-export const Index = Template.bind({})
-Index.args = {
-  initial
+export const Index: ComponentStoryObj<typeof ListContent> = {
+  args: { items: initial }
 }

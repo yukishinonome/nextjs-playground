@@ -1,12 +1,9 @@
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 import AnimationItems from './AnimationItems'
 
 export default {
   title: 'Organisms/AnimationItems',
   component: AnimationItems
-} as Meta
+} as ComponentMeta<typeof AnimationItems>
 
-const Template: Story = (args) => <AnimationItems {...args} />
-
-export const Index = Template.bind({})
-Index.args = {}
+export const Index: ComponentStoryObj<typeof AnimationItems> = {}
