@@ -1,16 +1,15 @@
-import Pagination, { Props } from './Pagination'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
+import Pagination from './Pagination'
 
 export default {
   title: 'Organisms/Pagination',
   component: Pagination
-} as Meta
+} as ComponentMeta<typeof Pagination>
 
-const Template: Story<Props> = (args) => <Pagination {...args} />
-
-export const Index = Template.bind({})
-Index.args = {
-  pageItems: [...Array(102)].map((_, idx) => {
-    return 'Item' + (idx + 1)
-  })
+export const Index: ComponentStoryObj<typeof Pagination> = {
+  args: {
+    pageItems: [...Array(102)].map((_, idx) => {
+      return 'Item' + (idx + 1)
+    })
+  }
 }
