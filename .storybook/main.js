@@ -5,7 +5,7 @@ module.exports = {
     builder: 'webpack5'
   },
   stories: [
-    '../components/**/**/*.stories.@(js|jsx|ts|tsx)'
+    '../components'
     // '../stories/**/*.stories.mdx',
     // '../stories/**/*.stories.@(js|jsx|ts|tsx)'
   ],
