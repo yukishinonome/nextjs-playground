@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '../../../test/testUtils'
 import { composeStories } from '@storybook/testing-react'
 import * as stories from './SimpleForm.stories'
 
