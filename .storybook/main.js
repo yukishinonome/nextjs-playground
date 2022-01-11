@@ -15,6 +15,9 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/addon-interactions'
   ],
+  features: {
+    interactionsDebugger: true
+  },
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.scss$/,
