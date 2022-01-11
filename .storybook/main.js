@@ -12,8 +12,12 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-a11y'
+    '@storybook/addon-a11y',
+    '@storybook/addon-interactions'
   ],
+  features: {
+    interactionsDebugger: true
+  },
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.scss$/,
