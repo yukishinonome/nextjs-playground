@@ -25,7 +25,7 @@ const SimpleFrom: VFC = () => {
         </label>
         <input type="submit" value="Submit" />
       </form>
-      <div>入力した名前：{printName}</div>
+      <div data-testid="print-name">入力した名前：{printName}</div>
     </>
   )
 }

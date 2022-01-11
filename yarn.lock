@@ -3021,6 +3021,11 @@
   dependencies:
     lodash "^4.17.15"
 
+"@storybook/expect@storybook-jest":
+  version "27.4.6"
+  resolved "https://registry.yarnpkg.com/@storybook/expect/-/expect-27.4.6.tgz#2d6bc6edd0ddcdd0befb9cabf2abd4f1f1a54a7a"
+  integrity sha512-Ch6FwwVjNB8y1s+Yob1LI/dwGLt19rfnmwRmP+a9ShPcTstXD0JbxyZoc6VquHLV9Wney98okM/2PE78sF+ZRA==
+
 "@storybook/instrumenter@6.4.0-rc.5":
   version "6.4.0-rc.5"
   resolved "https://registry.yarnpkg.com/@storybook/instrumenter/-/instrumenter-6.4.0-rc.5.tgz#eef42e84b441f0df21bdf3fd67b26059b1c0a61f"
@@ -3040,6 +3045,15 @@
     "@storybook/client-logger" "6.4.10"
     "@storybook/core-events" "6.4.10"
     global "^4.4.0"
+
+"@storybook/jest@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@storybook/jest/-/jest-0.0.5.tgz#b7513dc23d65a76c88b336f440b4d32e4fc9635e"
+  integrity sha512-aWpzNlmA80s4WqJBYi6zngba+IinUiePAhs5AomHPOyfu5tQXD/x+UMpjuKSrIsxsyftn1snBn7D7ZfZwrUbjw==
+  dependencies:
+    "@storybook/expect" storybook-jest
+    "@storybook/instrumenter" "6.4.0-rc.5"
+    jest-mock "^27.3.0"
 
 "@storybook/manager-webpack4@6.4.9":
   version "6.4.9"
@@ -9075,7 +9089,7 @@ jest-message-util@^27.4.2:
     slash "^3.0.0"
     stack-utils "^2.0.3"
 
-jest-mock@^27.0.6:
+jest-mock@^27.0.6, jest-mock@^27.3.0:
   version "27.4.6"
   resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-27.4.6.tgz#77d1ba87fbd33ccb8ef1f061697e7341b7635195"
   integrity sha512-kvojdYRkst8iVSZ1EJ+vc1RRD9llueBjKzXzeCytH3dMM7zvPV/ULcfI2nr0v0VUgm3Bjt3hBCQvOeaBz+ZTHw==
