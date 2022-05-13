@@ -16,7 +16,7 @@
     "sb-deploy": "yarn build-storybook && yarn deploy"
   },
   "engines": {
-    "npm": "npmではなくyarnを使ってください"
+    "npm": "npmではなくyarnを使ってください！"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",
