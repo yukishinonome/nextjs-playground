@@ -1,4 +1,4 @@
-import ItemCard from '../../atoms/ItemCard'
+import ItemCard from '@/components/atoms/ItemCard'
 import { ItemType } from '../ListContent'
 
 const ItemList = ({ items }: { items: ItemType[] }): JSX.Element => (
