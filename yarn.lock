@@ -3399,6 +3399,11 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/body-scroll-lock@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@types/body-scroll-lock/-/body-scroll-lock-3.1.0.tgz#435f6abf682bf58640e1c2ee5978320b891970e7"
+  integrity sha512-3owAC4iJub5WPqRhxd8INarF2bWeQq1yQHBgYhN0XLBJMpd5ED10RrJ3aKiAwlTyL5wK7RkBD4SZUQz2AAAMdA==
+
 "@types/color-convert@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/color-convert/-/color-convert-2.0.0.tgz#8f5ee6b9e863dcbee5703f5a517ffb13d3ea4e22"
@@ -3619,6 +3624,13 @@
   version "13.1.2"
   resolved "https://registry.yarnpkg.com/@types/react-beautiful-dnd/-/react-beautiful-dnd-13.1.2.tgz#510405abb09f493afdfd898bf83995dc6385c130"
   integrity sha512-+OvPkB8CdE/bGdXKyIhc/Lm2U7UAYCCJgsqmopFmh9gbAudmslkI8eOrPDjg4JhwSE6wytz4a3/wRjKtovHVJg==
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-dom@^18.0.4":
+  version "18.0.4"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.4.tgz#dcbcadb277bcf6c411ceff70069424c57797d375"
+  integrity sha512-FgTtbqPOCI3dzZPZoC2T/sx3L34qxy99ITWn4eoSA95qPyXDMH0ALoAqUp49ITniiJFsXUVBtalh/KffMpg21Q==
   dependencies:
     "@types/react" "*"
 
@@ -4925,6 +4937,11 @@ body-parser@1.19.0:
     qs "6.7.0"
     raw-body "2.4.0"
     type-is "~1.6.17"
+
+body-scroll-lock@^4.0.0-beta.0:
+  version "4.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/body-scroll-lock/-/body-scroll-lock-4.0.0-beta.0.tgz#4f78789d10e6388115c0460cd6d7d4dd2bbc4f7e"
+  integrity sha512-a7tP5+0Mw3YlUJcGAKUqIBkYYGlYxk2fnCasq/FUph1hadxlTRjF+gAcZksxANnaMnALjxEddmSi/H3OR8ugcQ==
 
 boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
@@ -7250,6 +7267,13 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
+
+focus-trap@^6.9.2:
+  version "6.9.2"
+  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-6.9.2.tgz#a9ef72847869bd2cbf62cb930aaf8e138fef1ca9"
+  integrity sha512-gBEuXOPNOKPrLdZpMFUSTyIo1eT2NSZRrwZ9r/0Jqw5tmT3Yvxfmu8KBHw8xW2XQkw6E/JoG+OlEq7UDtSUNgw==
+  dependencies:
+    tabbable "^5.3.2"
 
 for-in@^1.0.2:
   version "1.0.2"
@@ -12695,6 +12719,11 @@ synchronous-promise@^2.0.15:
   version "2.0.15"
   resolved "https://registry.yarnpkg.com/synchronous-promise/-/synchronous-promise-2.0.15.tgz#07ca1822b9de0001f5ff73595f3d08c4f720eb8e"
   integrity sha512-k8uzYIkIVwmT+TcglpdN50pS2y1BDcUnBPK9iJeGu0Pl1lOI8pD6wtzgw91Pjpe+RxtTncw32tLxs/R0yNL2Mg==
+
+tabbable@^5.3.2:
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-5.3.2.tgz#66d6119ee8a533634c3f17deb0caa1c379e36ac7"
+  integrity sha512-6G/8EWRFx8CiSe2++/xHhXkmCRq2rHtDtZbQFHx34cvDfZzIBfvwG9zGUNTWMXWLCYvDj3aQqOzdl3oCxKuBkQ==
 
 tapable@^1.0.0, tapable@^1.1.3:
   version "1.1.3"
