@@ -25,6 +25,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.5.1",
     "@mui/material": "^5.5.3",
+    "body-scroll-lock": "^4.0.0-beta.0",
     "focus-trap": "^6.9.2",
     "next": "12.1.4",
     "react": "^17.0.2",
