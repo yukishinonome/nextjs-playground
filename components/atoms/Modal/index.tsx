@@ -1,6 +1,7 @@
 import { useDisableScroll } from '@/hooks/use-disable-scroll'
 import { useFocusTrap } from '@/hooks/use-focus-trap'
 import { memo, ReactNode, useRef, VFC } from 'react'
+import ReactDOM from 'react-dom'
 import styles from './Modal.module.scss'
 
 type Props = {
@@ -20,7 +21,7 @@ const Modal: VFC<Props> = (props) => {
     return null
   }
 
-  return (
+  return ReactDOM.createPortal(
     <div
       role="dialog"
       aria-modal="true"
@@ -30,7 +31,8 @@ const Modal: VFC<Props> = (props) => {
       className={styles.opened}
     >
       {props.children}
-    </div>
+    </div>,
+    document.body
   )
 }
 
