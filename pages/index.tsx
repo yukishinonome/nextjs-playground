@@ -1,13 +1,15 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { VFC } from 'react'
 import PageTitle from '../components/atoms/PageTitle'
 
-const Home = (): JSX.Element => {
+const Home: VFC = () => {
   const pageList = [
     'animation',
     'react-beautiful-dnd',
     'pagination',
-    'mui/button'
+    'mui/button',
+    'dnd-image'
   ]
 
   return (
