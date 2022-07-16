@@ -17,14 +17,14 @@ type DndRef<T> = {
   dndItems: DndItem<T>[]
   canCheckHovered: boolean
   pointerPosition: Position
-  dragElement: DndItem<T> | null
+  dragElement: DndItem<T>
 }
 
 type DndSortResult<T> = {
   key: string
   value: T
   events: {
-    ref: (element: HTMLElement | null) => void
+    ref: (element: HTMLElement) => void
     onMouseDown: (event: React.MouseEvent<HTMLElement>) => void
   }
 }
@@ -122,7 +122,7 @@ export const useDndSort = <T>(defaultItems: T[]): DndSortResult<T>[] => {
       value,
       key,
       events: {
-        ref: (element: HTMLElement | null) => {
+        ref: (element: HTMLElement) => {
           if (!element) return
 
           const { dndItems, dragElement, pointerPosition } = state
