@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 350px;
+  max-height: 500px;
+}
+
+.imageCard {
+  position: relative;
+  cursor: grab;
+  user-select: none;
+  width: 100px;
+  height: 130px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 4px;
+}
+
+.imageStyle {
+  pointer-events: none;
+}
