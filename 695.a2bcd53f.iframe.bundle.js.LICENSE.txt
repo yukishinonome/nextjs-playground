@@ -31,7 +31,17 @@ object-assign
  * Released under the MIT License.
  */
 
-/** @license MUI v5.2.0
+/*!
+* focus-trap 6.9.2
+* @license MIT, https://github.com/focus-trap/focus-trap/blob/master/LICENSE
+*/
+
+/*!
+* tabbable 5.3.2
+* @license MIT, https://github.com/focus-trap/tabbable/blob/master/LICENSE
+*/
+
+/** @license MUI v5.5.2
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
