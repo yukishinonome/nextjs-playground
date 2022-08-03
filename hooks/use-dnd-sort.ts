@@ -74,17 +74,22 @@ export const useDndSort = <T>(defaultItems: T[]): DndSortResult<T>[] => {
 
     if (!state.canCheckHovered) return
 
+    // すぐには確認できないようにする
     state.canCheckHovered = false
 
+    // 300ms後に確認できるようにする
     setTimeout(() => (state.canCheckHovered = true), 300)
 
+    // ドラッグしている要素の配列の位置を取得
     const dragIndex = dndItems.findIndex(({ key }) => key === dragElement.key)
 
+    // ホバーされている要素の配列の位置を取得
     const hoveredIndex = dndItems.findIndex(
       ({ element }, index) => index !== dragIndex && isHover(event, element)
     )
 
     if (hoveredIndex !== -1) {
+      // カーソルの位置を更新
       state.dragStartPosition.x = clientX
       state.dragStartPosition.y = clientY
 
@@ -143,11 +148,14 @@ export const useDndSort = <T>(defaultItems: T[]): DndSortResult<T>[] => {
           }
 
           if (dragElement?.key === key) {
+            // ドラッグ要素のズレを計算する
             const dragX = dragElement.position.x - position.x
             const dragY = dragElement.position.y - position.y
 
+            // 入れ替え時のズレをなくす
             element.style.transform = `translate(${dragX}px,${dragY}px)`
 
+            // マウス ポインターの位置も計算してズレをなくす
             dragStartPosition.x -= dragX
             dragStartPosition.y -= dragY
           }
