@@ -34,6 +34,13 @@ module.exports = {
       '@': path.resolve(__dirname, '..')
     }
 
+    config.plugins.push(
+      new webpack.NormalModuleReplacementPlugin(
+        /next\/image/,
+        path.resolve(__dirname, '../__mocks__/next/image.js')
+      )
+    )
+
     return config
   }
 }
