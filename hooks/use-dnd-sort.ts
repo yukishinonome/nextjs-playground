@@ -160,15 +160,19 @@ export const useDndSort = <T>(defaultItems: T[]): DndSortResult<T>[] => {
             dragStartPosition.y -= dragY
           }
 
+          // ドラッグ要素以外の要素をアニメーションさせながら移動させる
           if (dragElement?.key !== key) {
             const item = dndItems[itemIndex]
 
+            // 前回の座標を計算
             const x = item.position.x - position.x
             const y = item.position.y - position.y
 
+            // 要素を前回の位置に留めておく
             element.style.transition = ''
             element.style.transform = `translate(${x}px,${y}px)`
 
+            // 一フレーム後に要素をアニメーションさせながら元の位置に戻す
             requestAnimationFrame(() => {
               element.style.transform = ''
               element.style.transition = 'all 300ms'
