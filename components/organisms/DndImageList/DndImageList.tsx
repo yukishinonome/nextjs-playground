@@ -42,6 +42,7 @@ const DndImageList: VFC = () => {
             className={styles.imageStyle}
             layout="fill"
             objectFit="cover"
+            unoptimized
           />
         </div>
       ))}
