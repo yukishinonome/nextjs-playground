@@ -1,5 +1,4 @@
 import { useDndSort } from '@/hooks/use-dnd-sort'
-import Image from 'next/image'
 import { VFC } from 'react'
 import styles from './DndImageList.module.scss'
 
@@ -36,12 +35,10 @@ const DndImageList: VFC = () => {
     <div className={styles.container}>
       {results.map((item) => (
         <div key={item.key} className={styles.imageCard} {...item.events}>
-          <Image
+          <img
             src={item.value}
             alt="ソート可能な画像"
             className={styles.imageStyle}
-            layout="fill"
-            objectFit="cover"
           />
         </div>
       ))}
