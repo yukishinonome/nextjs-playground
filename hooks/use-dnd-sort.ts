@@ -74,17 +74,22 @@ export const useDndSort = <T>(defaultItems: T[]): DndSortResult<T>[] => {
 
     if (!state.canCheckHovered) return
 
+    // すぐには確認できないようにする
     state.canCheckHovered = false
 
+    // 300ms後に確認できるようにする
     setTimeout(() => (state.canCheckHovered = true), 300)
 
+    // ドラッグしている要素の配列の位置を取得
     const dragIndex = dndItems.findIndex(({ key }) => key === dragElement.key)
 
+    // ホバーされている要素の配列の位置を取得
     const hoveredIndex = dndItems.findIndex(
       ({ element }, index) => index !== dragIndex && isHover(event, element)
     )
 
     if (hoveredIndex !== -1) {
+      // カーソルの位置を更新
       state.dragStartPosition.x = clientX
       state.dragStartPosition.y = clientY
 
@@ -143,24 +148,31 @@ export const useDndSort = <T>(defaultItems: T[]): DndSortResult<T>[] => {
           }
 
           if (dragElement?.key === key) {
+            // ドラッグ要素のズレを計算する
             const dragX = dragElement.position.x - position.x
             const dragY = dragElement.position.y - position.y
 
+            // 入れ替え時のズレをなくす
             element.style.transform = `translate(${dragX}px,${dragY}px)`
 
+            // マウス ポインターの位置も計算してズレをなくす
             dragStartPosition.x -= dragX
             dragStartPosition.y -= dragY
           }
 
+          // ドラッグ要素以外の要素をアニメーションさせながら移動させる
           if (dragElement?.key !== key) {
             const item = dndItems[itemIndex]
 
+            // 前回の座標を計算
             const x = item.position.x - position.x
             const y = item.position.y - position.y
 
+            // 要素を前回の位置に留めておく
             element.style.transition = ''
             element.style.transform = `translate(${x}px,${y}px)`
 
+            // 一フレーム後に要素をアニメーションさせながら元の位置に戻す
             requestAnimationFrame(() => {
               element.style.transform = ''
               element.style.transition = 'all 300ms'
