@@ -25,14 +25,14 @@ type DndSortResult<T> = {
   value: T
   events: {
     ref: (element: HTMLElement) => void
-    onMouseDown: (event: React.MouseEvent<HTMLElement>) => void
+    onPointerDown: (event: React.PointerEvent<HTMLElement>) => void
   }
 }
 
 /**
- * @description マウスポインターが要素と被っているか判定する
+ * @description ポインターが要素と被っているか判定する
  */
-const isHover = (event: MouseEvent, element: HTMLElement): boolean => {
+const isHover = (event: PointerEvent, element: HTMLElement): boolean => {
   const clientX = event.clientX
   const clientY = event.clientY
 
@@ -57,7 +57,7 @@ export const useDndSort = <T>(defaultItems: T[]): DndSortResult<T>[] => {
     dragStartPosition: { x: 0, y: 0 }
   }).current
 
-  const onMouseMove = (event: MouseEvent) => {
+  const onPointerMove = (event: PointerEvent) => {
     const { clientX, clientY } = event
     const { dndItems, dragElement, dragStartPosition } = state
 
@@ -104,7 +104,7 @@ export const useDndSort = <T>(defaultItems: T[]): DndSortResult<T>[] => {
     }
   }
 
-  const onMouseUp = () => {
+  const onPointerUp = () => {
     const { dragElement } = state
 
     if (!dragElement) return
@@ -117,8 +117,8 @@ export const useDndSort = <T>(defaultItems: T[]): DndSortResult<T>[] => {
 
     state.dragElement = null
 
-    window.removeEventListener('mouseup', onMouseUp)
-    window.removeEventListener('mousemove', onMouseMove)
+    window.removeEventListener('pointerup', onPointerUp)
+    window.removeEventListener('pointermove', onPointerMove)
   }
 
   return items.map((value: T): DndSortResult<T> => {
@@ -155,7 +155,7 @@ export const useDndSort = <T>(defaultItems: T[]): DndSortResult<T>[] => {
             // 入れ替え時のズレをなくす
             element.style.transform = `translate(${dragX}px,${dragY}px)`
 
-            // マウス ポインターの位置も計算してズレをなくす
+            // ポインターの位置も計算してズレをなくす
             dragStartPosition.x -= dragX
             dragStartPosition.y -= dragY
           }
@@ -181,11 +181,11 @@ export const useDndSort = <T>(defaultItems: T[]): DndSortResult<T>[] => {
 
           state.dndItems[itemIndex] = { key, value, element, position }
         },
-        onMouseDown: (event: React.MouseEvent<HTMLElement>) => {
+        onPointerDown: (event: React.PointerEvent<HTMLElement>) => {
           // ドラッグする要素
           const element = event.currentTarget
 
-          // マウスポインターの座標を保持しておく
+          // ポインターの座標を保持しておく
           state.dragStartPosition.x = event.clientX
           state.dragStartPosition.y = event.clientY
 
@@ -199,8 +199,8 @@ export const useDndSort = <T>(defaultItems: T[]): DndSortResult<T>[] => {
 
           state.dragElement = { key, value, element, position }
 
-          window.addEventListener('mouseup', onMouseUp)
-          window.addEventListener('mousemove', onMouseMove)
+          window.addEventListener('pointerup', onPointerUp)
+          window.addEventListener('pointermove', onPointerMove)
         }
       }
     }
