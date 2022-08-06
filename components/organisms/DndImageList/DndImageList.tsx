@@ -12,7 +12,7 @@ type Result = {
   // ドラッグ＆ドロップ処理で使うイベント関数を返す関数
   events: {
     ref: (value: any) => void
-    onMouseDown: (event: any) => void
+    onPointerDown: (event: any) => void
   }
 }
 
