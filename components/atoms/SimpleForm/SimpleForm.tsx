@@ -1,6 +1,6 @@
-import { VFC, useState } from 'react'
+import { FC, useState } from 'react'
 
-const SimpleFrom: VFC = () => {
+const SimpleFrom: FC = () => {
   const [name, setName] = useState('')
   const [printName, setPrintName] = useState('')
 

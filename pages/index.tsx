@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { VFC } from 'react'
+import { FC } from 'react'
 import PageTitle from '../components/atoms/PageTitle'
 
-const Home: VFC = () => {
+const Home: FC = () => {
   const pageList = [
     'animation',
     'react-beautiful-dnd',

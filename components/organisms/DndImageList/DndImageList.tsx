@@ -1,5 +1,5 @@
 import { useDndSort } from '@/hooks/use-dnd-sort'
-import { VFC } from 'react'
+import { FC } from 'react'
 import styles from './DndImageList.module.scss'
 
 type Result = {
@@ -28,7 +28,7 @@ const imageList = [
   'https://source.unsplash.com/LUpDjlJv4_c'
 ]
 
-const DndImageList: VFC = () => {
+const DndImageList: FC = () => {
   const results: Result[] = useDndSort(imageList)
 
   return (
