@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import {
   DragDropContext,
   Droppable,
@@ -6,21 +7,22 @@ import {
 import ItemList from '../ItemList'
 import { ItemType } from './index'
 
-const ListContent = ({
-  onDragEnd,
-  items
-}: {
+type Props = {
   onDragEnd: OnDragEndResponder
   items: ItemType[]
-}): JSX.Element => {
+}
+
+const ListContent: FC<Props> = ({ onDragEnd, items }) => {
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <Droppable droppableId="list">
         {(provided) => (
-          <div ref={provided.innerRef} {...provided.droppableProps}>
-            <ItemList items={items} />
+          <>
+            <div ref={provided.innerRef} {...provided.droppableProps}>
+              <ItemList items={items} />
+            </div>
             {provided.placeholder}
-          </div>
+          </>
         )}
       </Droppable>
     </DragDropContext>
