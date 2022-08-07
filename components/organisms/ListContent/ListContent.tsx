@@ -1,29 +1,36 @@
+import { FC } from 'react'
 import {
-  DragDropContext,
-  Droppable,
+  // DragDropContext,
+  // Droppable,
   OnDragEndResponder
 } from 'react-beautiful-dnd'
-import ItemList from '../ItemList'
+// import ItemList from '../ItemList'
 import { ItemType } from './index'
 
-const ListContent = ({
-  onDragEnd,
-  items
-}: {
+type Props = {
   onDragEnd: OnDragEndResponder
   items: ItemType[]
-}): JSX.Element => {
+}
+
+const ListContent: FC<Props> = ({ onDragEnd, items }) => {
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <Droppable droppableId="list">
-        {(provided) => (
-          <div ref={provided.innerRef} {...provided.droppableProps}>
-            <ItemList items={items} />
-            {provided.placeholder}
-          </div>
-        )}
-      </Droppable>
-    </DragDropContext>
+    // <DragDropContext onDragEnd={onDragEnd}>
+    //   <Droppable droppableId="list">
+    //     {(provided) => (
+    //       <>
+    //         <div ref={provided.innerRef} {...provided.droppableProps}>
+    //           <ItemList items={items} />
+    //         </div>
+    //         {provided.placeholder}
+    //       </>
+    //     )}
+    //   </Droppable>
+    // </DragDropContext>
+    <>
+      <div>react 18 に対応していない</div>
+      <div>{onDragEnd.length}</div>
+      <div>{items.length}</div>
+    </>
   )
 }
 

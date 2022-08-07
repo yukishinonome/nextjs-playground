@@ -1,7 +1,10 @@
 import ItemCard from '@/components/atoms/ItemCard'
+import { FC } from 'react'
 import { ItemType } from '../ListContent'
 
-const ItemList = ({ items }: { items: ItemType[] }): JSX.Element => (
+type Props = { items: ItemType[] }
+
+const ItemList: FC<Props> = ({ items }) => (
   <>
     {items.map((item, index) => (
       <ItemCard item={item} index={index} key={item.id} />

@@ -1,6 +1,6 @@
 import { useDisableScroll } from '@/hooks/use-disable-scroll'
 import { useFocusTrap } from '@/hooks/use-focus-trap'
-import { memo, ReactNode, useRef, VFC } from 'react'
+import { FC, memo, ReactNode, useRef } from 'react'
 import ReactDOM from 'react-dom'
 import styles from './Modal.module.scss'
 
@@ -12,7 +12,7 @@ type Props = {
   onClose: () => void
 }
 
-const Modal: VFC<Props> = (props) => {
+const Modal: FC<Props> = (props) => {
   const ref = useRef<HTMLDivElement>(null)
   useFocusTrap({ ref, isOpen: props.isOpen, onClose: props.onClose })
   useDisableScroll(ref, props.isOpen)

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { VFC } from 'react'
+import { FC } from 'react'
 import styles from './Pagination2.module.scss'
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 // 常に表示する前後のページ数
 const aroundPages = 2
 
-const Pagination2: VFC<Props> = ({ currentPage, totalPages, createHref }) => {
+const Pagination2: FC<Props> = ({ currentPage, totalPages, createHref }) => {
   // 表示するページの範囲
   const fromPage = currentPage - aroundPages < 1 ? 1 : currentPage - aroundPages
   const toPage =

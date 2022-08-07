@@ -1,12 +1,12 @@
-import { VFC } from 'react'
-import Stack from '@mui/material/Stack'
-import Button from '@mui/material/Button'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 import DeleteIcon from '@mui/icons-material/Delete'
 import SendIcon from '@mui/icons-material/Send'
+import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
+import Stack from '@mui/material/Stack'
+import { FC } from 'react'
 
-const MuiButton: VFC = () => {
+const MuiButton: FC = () => {
   return (
     <Stack spacing={2} direction="row">
       <Button variant="text">Text</Button>
