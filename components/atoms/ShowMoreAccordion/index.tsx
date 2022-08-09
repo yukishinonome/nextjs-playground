@@ -28,10 +28,8 @@ const ShowMoreAccordion: FC<Props> = ({
         {contents.slice(0, showCount).map((content, index) => (
           <li key={index}>{content}</li>
         ))}
-        <button onClick={handleClick}>
-          {isOpen ? '閉じる' : 'もっと見る'}
-        </button>
       </ul>
+      <button onClick={handleClick}>{isOpen ? '閉じる' : 'もっと見る'}</button>
     </>
   )
 }
