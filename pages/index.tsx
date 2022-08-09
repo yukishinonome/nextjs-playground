@@ -9,7 +9,8 @@ const Home: FC = () => {
     'react-beautiful-dnd',
     'pagination',
     'mui/button',
-    'dnd-image'
+    'dnd-image',
+    'ui-list'
   ]
 
   return (
