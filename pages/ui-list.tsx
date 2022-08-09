@@ -1,6 +1,9 @@
 import Accordion from '@/components/atoms/Accordion'
+import ShowMoreAccordion from '@/components/atoms/ShowMoreAccordion'
 import { FC } from 'react'
 import Layout from '../components/Layout'
+
+const contents = ['hoge', 'hoge', 'hoge', 'hoge', 'hoge']
 
 const UiList: FC = () => {
   return (
@@ -8,7 +11,11 @@ const UiList: FC = () => {
       <Accordion title="アコーディオン">
         <p>テキストテキストテキストテキストテキストテキスト</p>
       </Accordion>
-      <div>UI</div>
+      <ShowMoreAccordion
+        title="アコーディオン"
+        initialShowCount={2}
+        contents={contents}
+      />
       <div>UI</div>
       <div>UI</div>
     </Layout>
