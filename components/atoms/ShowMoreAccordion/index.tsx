@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
 
 type Props = {
-  title: string
+  title?: string
   isOpenDefault?: boolean
   initialShowCount?: number
   contents: string[]
@@ -23,7 +23,7 @@ const ShowMoreAccordion: FC<Props> = ({
 
   return (
     <>
-      <h4>{title}</h4>
+      {!!title && <h4>{title}</h4>}
       <ul>
         {contents.slice(0, showCount).map((content, index) => (
           <li key={index}>{content}</li>
