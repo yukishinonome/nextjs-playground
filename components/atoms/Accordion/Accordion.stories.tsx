@@ -6,4 +6,9 @@ export default {
   component: Accordion
 } as ComponentMeta<typeof Accordion>
 
-export const Index: ComponentStoryObj<typeof Accordion> = {}
+export const Index: ComponentStoryObj<typeof Accordion> = {
+  args: {
+    title: 'アコーディオン',
+    children: 'テキストテキストテキストテキストテキスト'
+  }
+}

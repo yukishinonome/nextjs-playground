@@ -6,4 +6,10 @@ export default {
   component: ShowMoreAccordion
 } as ComponentMeta<typeof ShowMoreAccordion>
 
-export const Index: ComponentStoryObj<typeof ShowMoreAccordion> = {}
+export const Index: ComponentStoryObj<typeof ShowMoreAccordion> = {
+  args: {
+    title: 'アコーディオン',
+    initialShowCount: 2,
+    contents: ['hoge', 'hoge', 'hoge', 'hoge', 'hoge']
+  }
+}
