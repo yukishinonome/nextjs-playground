@@ -1,22 +1,27 @@
-import { FC, useState, useEffect } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 import styles from './AnimationItems.module.scss'
 
 const AnimationItems: FC = () => {
   const [isAnimationA, setAnimationA] = useState(false)
   const [isAnimationB, setAnimationB] = useState(false)
   const [isAnimationC, setAnimationC] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const elementB = document.getElementById('animation-b')
-
     const handlerB = () => {
       setAnimationB(false)
     }
 
-    elementB.addEventListener('animationend', handlerB)
+    const elementB = ref.current
+
+    if (elementB) {
+      elementB.addEventListener('animationend', handlerB)
+    }
 
     return () => {
-      elementB.removeEventListener('animationend', handlerB)
+      if (elementB) {
+        elementB.removeEventListener('animationend', handlerB)
+      }
     }
   }, [])
 
@@ -40,7 +45,7 @@ const AnimationItems: FC = () => {
       </section>
       <section>
         <div
-          id="animation-b"
+          ref={ref}
           className={`${styles['animation-b']} ${
             isAnimationB ? styles['animation-b-running'] : ''
           }`}
