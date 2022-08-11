@@ -17,7 +17,7 @@ type DndRef<T> = {
   dndItems: DndItem<T>[]
   canCheckHovered: boolean
   dragStartPosition: Position
-  dragElement: DndItem<T>
+  dragElement: DndItem<T> | null
 }
 
 type DndSortResult<T> = {
