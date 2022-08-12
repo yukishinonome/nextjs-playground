@@ -1,18 +1,21 @@
-import { createRef, useEffect, useRef } from 'react'
+import {
+  createRef,
+  MutableRefObject,
+  RefObject,
+  useEffect,
+  useRef
+} from 'react'
 
 export const useIntersectionObserver = <T extends HTMLElement>(
   numberOfElements: number,
-  intersectionObserverCallback: (entries: IntersectionObserverEntry[]) => void,
+  callback: (entries: IntersectionObserverEntry[]) => void,
   options?: IntersectionObserverInit
-) => {
+): MutableRefObject<RefObject<T>[]> => {
   const els = useRef([...Array(numberOfElements)].map(() => createRef<T>()))
 
   useEffect(() => {
     const observerRefValueList: T[] = []
-    const observer = new IntersectionObserver(
-      intersectionObserverCallback,
-      options
-    )
+    const observer = new IntersectionObserver(callback, options)
 
     els.current.forEach((el) => {
       if (el.current) {
