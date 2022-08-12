@@ -12,7 +12,7 @@ const showElements = (entries: IntersectionObserverEntry[]) => {
 }
 
 const IntersectionObserverPage: FC = () => {
-  const els = useIntersectionObserver<HTMLHeadingElement>(showElements, 3)
+  const els = useIntersectionObserver<HTMLHeadingElement>(3, showElements)
 
   return (
     <Layout pageName="intersection-observer">
