@@ -7,10 +7,11 @@ import {
 } from 'react'
 
 /**
+ * @template T RefObject の型を明示する必要がある
  * @param numberOfElements 要素の数
- * @param callback IntersectionObserverのインスタンス生成時に渡すコールバック関数
- * @param options IntersectionObserverのインスタンス生成時に渡すオプション
- * @returns numberOfElementsで指定した数のRefObject
+ * @param callback IntersectionObserver のインスタンス生成時に渡すコールバック関数
+ * @param options IntersectionObserver のインスタンス生成時に渡すオプション
+ * @return numberOfElements で指定した数の RefObject
  */
 export const useIntersectionObserver = <T extends HTMLElement>(
   numberOfElements: number,
