@@ -1,36 +1,18 @@
 import Layout from '@/components/Layout'
-import { createRef, FC, useEffect, useRef } from 'react'
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer'
+import { FC } from 'react'
 import styles from './IntersectionObserver.module.scss'
 
-const IntersectionObserverPage: FC = () => {
-  const els = useRef([...Array(3)].map(() => createRef<HTMLHeadingElement>()))
-
-  useEffect(() => {
-    const observerRefValueList: HTMLHeadingElement[] = []
-
-    const observer = new IntersectionObserver(showElements)
-
-    els.current.forEach((el) => {
-      if (el.current) {
-        observer.observe(el.current)
-        observerRefValueList.push(el.current)
-      }
-    })
-
-    return () => {
-      observerRefValueList.forEach((value) => {
-        observer.unobserve(value)
-      })
+const showElements = (entries: IntersectionObserverEntry[]) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add(styles.active)
     }
   })
+}
 
-  const showElements = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add(styles.active)
-      }
-    })
-  }
+const IntersectionObserverPage: FC = () => {
+  const els = useIntersectionObserver<HTMLHeadingElement>(showElements, 3)
 
   return (
     <Layout pageName="intersection-observer">
