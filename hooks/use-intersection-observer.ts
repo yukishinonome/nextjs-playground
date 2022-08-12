@@ -6,6 +6,12 @@ import {
   useRef
 } from 'react'
 
+/**
+ * @param numberOfElements 要素の数
+ * @param callback IntersectionObserverのインスタンス生成時に渡すコールバック関数
+ * @param options IntersectionObserverのインスタンス生成時に渡すオプション
+ * @returns numberOfElementsで指定した数のRefObject
+ */
 export const useIntersectionObserver = <T extends HTMLElement>(
   numberOfElements: number,
   callback: (entries: IntersectionObserverEntry[]) => void,
