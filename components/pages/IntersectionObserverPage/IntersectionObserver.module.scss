@@ -1,0 +1,18 @@
+.heading {
+  color: #0bd;
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 400px 0;
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.active {
+  opacity: 1;
+  transition: 1s;
+  transform: translateX(0);
+}
+
+.scroll {
+  font-size: 2rem;
+}

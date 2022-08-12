@@ -10,7 +10,8 @@ const Home: FC = () => {
     'pagination',
     'mui/button',
     'dnd-image',
-    'ui-list'
+    'ui-list',
+    'intersection-observer'
   ]
 
   return (
