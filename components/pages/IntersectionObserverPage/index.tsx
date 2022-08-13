@@ -20,7 +20,7 @@ const IntersectionObserverPage: FC = () => {
 
   return (
     <Layout pageName="intersection-observer">
-      <div className="">↓ scroll ↓</div>
+      <div>↓ scroll ↓</div>
       <h2 className={styles.heading} ref={ref1}>
         Hello 1
       </h2>
