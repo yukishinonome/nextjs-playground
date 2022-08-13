@@ -11,19 +11,19 @@ export const useIntersectionObserver = (
   options?: IntersectionObserverInit
 ): void => {
   useEffect(() => {
-    const observerRefValueList: HTMLElement[] = []
     const observer = new IntersectionObserver(callback, options)
 
     refs.forEach((ref) => {
       if (ref.current) {
         observer.observe(ref.current)
-        observerRefValueList.push(ref.current)
       }
     })
 
     return () => {
-      observerRefValueList.forEach((value) => {
-        observer.unobserve(value)
+      refs.forEach((ref) => {
+        if (ref.current) {
+          observer.unobserve(ref.current)
+        }
       })
     }
   })
