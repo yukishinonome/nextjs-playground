@@ -12,18 +12,18 @@ const showElements = (entries: IntersectionObserverEntry[]) => {
 }
 
 const IntersectionObserverPage: FC = () => {
-  const els = useIntersectionObserver<HTMLHeadingElement>(3, showElements)
+  const refs = useIntersectionObserver<HTMLHeadingElement>(3, showElements)
 
   return (
     <Layout pageName="intersection-observer">
       <div className="">↓ scroll ↓</div>
-      <h2 className={styles.heading} ref={els.current[0]}>
+      <h2 className={styles.heading} ref={refs.current[0]}>
         Hello 1
       </h2>
-      <h2 className={styles.heading} ref={els.current[1]}>
+      <h2 className={styles.heading} ref={refs.current[1]}>
         Hello 2
       </h2>
-      <h2 className={styles.heading} ref={els.current[2]}>
+      <h2 className={styles.heading} ref={refs.current[2]}>
         Hello 3
       </h2>
     </Layout>

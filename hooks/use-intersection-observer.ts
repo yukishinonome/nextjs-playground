@@ -18,16 +18,16 @@ export const useIntersectionObserver = <T extends HTMLElement>(
   callback: (entries: IntersectionObserverEntry[]) => void,
   options?: IntersectionObserverInit
 ): MutableRefObject<RefObject<T>[]> => {
-  const els = useRef([...Array(numberOfElements)].map(() => createRef<T>()))
+  const refs = useRef([...Array(numberOfElements)].map(() => createRef<T>()))
 
   useEffect(() => {
     const observerRefValueList: T[] = []
     const observer = new IntersectionObserver(callback, options)
 
-    els.current.forEach((el) => {
-      if (el.current) {
-        observer.observe(el.current)
-        observerRefValueList.push(el.current)
+    refs.current.forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current)
+        observerRefValueList.push(ref.current)
       }
     })
 
@@ -38,5 +38,5 @@ export const useIntersectionObserver = <T extends HTMLElement>(
     }
   })
 
-  return els
+  return refs
 }
