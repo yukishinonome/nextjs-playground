@@ -16,7 +16,7 @@ const IntersectionObserverPage: FC = () => {
   const ref2 = useRef<HTMLHeadingElement>(null)
   const ref3 = useRef<HTMLHeadingElement>(null)
 
-  useIntersectionObserver<HTMLHeadingElement>([ref1, ref2, ref3], showElements)
+  useIntersectionObserver([ref1, ref2, ref3], showElements)
 
   return (
     <Layout pageName="intersection-observer">
