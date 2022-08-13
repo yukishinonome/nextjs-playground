@@ -1,10 +1,9 @@
 import { RefObject, useEffect } from 'react'
 
 /**
- * @param refs RefObject の配列
+ * @param refs Intersection Observer を適用した動作をさせたい要素の RefObject の配列
  * @param callback IntersectionObserver のインスタンス生成時に渡すコールバック関数
  * @param options IntersectionObserver のインスタンス生成時に渡すオプション
- * @return numberOfElements で指定した数の RefObject
  */
 export const useIntersectionObserver = (
   refs: RefObject<HTMLElement>[],
