@@ -1,11 +1,10 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
-import { within, userEvent } from '@storybook/testing-library'
+import { userEvent, within } from '@storybook/testing-library'
 // import { within, waitFor, userEvent } from '@storybook/testing-library'
 // import { expect } from '@storybook/jest'
 import SimpleForm from './SimpleForm'
 
 export default {
-  title: 'Atoms/SimpleForm',
   component: SimpleForm
 } as ComponentMeta<typeof SimpleForm>
 

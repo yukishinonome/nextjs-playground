@@ -2,7 +2,6 @@ import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 import Modal from '.'
 
 export default {
-  title: 'Atoms/Modal',
   component: Modal
 } as ComponentMeta<typeof Modal>
 

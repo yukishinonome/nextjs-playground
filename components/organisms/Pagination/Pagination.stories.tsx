@@ -2,7 +2,6 @@ import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 import Pagination from './Pagination'
 
 export default {
-  title: 'Organisms/Pagination',
   component: Pagination
 } as ComponentMeta<typeof Pagination>
 
