@@ -2,7 +2,6 @@ import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 import ListContent from './ListContent'
 
 export default {
-  title: 'Organisms/ListContent',
   component: ListContent
 } as ComponentMeta<typeof ListContent>
 

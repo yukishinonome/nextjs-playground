@@ -2,7 +2,6 @@ import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 import PageTitle from '.'
 
 export default {
-  title: 'Atoms/PageTitle',
   component: PageTitle
 } as ComponentMeta<typeof PageTitle>
 
