@@ -1,4 +1,4 @@
-import { act, fireEvent, render, renderHook } from '@/test/testUtils'
+import { act, fireEvent, render, renderHook, screen } from '@/test/testUtils'
 import { useInput } from './use-input'
 
 const setUp = (initialValue: string) => renderHook(() => useInput(initialValue))
@@ -16,24 +16,23 @@ test('入力した値で更新されて、戻り値の関数で更新された�
   const { result } = setUp('')
   const [form1Props, resetFormValue] = result.current
 
-  const { container } = render(
+  render(
     <>
       <input type="text" placeholder="form" required {...form1Props} />
       <button onClick={resetFormValue}>reset</button>
     </>
   )
 
-  const input = container.querySelector('input')
-  const button = container.querySelector('button')
-
   act(() => {
-    fireEvent.change(input!, { target: { value: 'hello' } })
+    fireEvent.change(screen.getByRole('textbox'), {
+      target: { value: 'hello' }
+    })
   })
 
   expect(result.current[0].value).toBe('hello')
 
   act(() => {
-    fireEvent.click(button!)
+    fireEvent.click(screen.getByRole('button'))
   })
 
   expect(result.current[0].value).toBe('')
