@@ -3,7 +3,7 @@ import { useInput } from './use-input'
 
 const setUp = (initialValue: string) => renderHook(() => useInput(initialValue))
 
-it('期待する戻り値である', () => {
+test('期待する戻り値である', () => {
   const { result } = setUp('hoge')
 
   expect(result.current.length).toBe(2)
@@ -12,7 +12,7 @@ it('期待する戻り値である', () => {
   expect(typeof result.current[1]).toBe('function')
 })
 
-it('入力した値で更新されて、戻り値の関数で更新された値を初期化できる', () => {
+test('入力した値で更新されて、戻り値の関数で更新された値を初期化できる', () => {
   const { result } = setUp('')
   const [form1Props, resetFormValue] = result.current
 
